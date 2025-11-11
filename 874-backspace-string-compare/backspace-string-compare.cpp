@@ -23,14 +23,12 @@ public:
                 t1.push(t[i]);
             }
         }
-        while(!s1.empty()){       // add element from s1 stack to string a
-            a.push_back(s1.top());
+        if (s1.size() != t1.size()) return false;
+        while (!s1.empty()) {
+            if (s1.top() != t1.top()) return false;
             s1.pop();
-        }
-        while(!t1.empty()){       // add element from t1 stack to string b
-            b.push_back(t1.top());
             t1.pop();
         }
-        return a == b;
+        return true;
     }
 };
